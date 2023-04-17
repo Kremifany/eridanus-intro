@@ -46,6 +46,8 @@ messageForm.addEventListener('submit', e => {
     removeButton.innerText = "remove";
     removeButton.type = "button";
 
+    removeButton.setAttribute("style", "color:#FEF;background:#333;");
+
     removeButton.addEventListener("click", (event) => {
         const entry = event.target.parentNode;
         entry.remove();

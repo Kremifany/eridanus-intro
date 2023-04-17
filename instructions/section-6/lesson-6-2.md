@@ -50,7 +50,7 @@ Now, open the project directory in your code editor and continue to the next sec
 
 These tasks are **entirely optional**, but if you'd like a challenge then do your best to complete each item.
 
-- [ ] (Optional) Chain a `catch()` function to your `fetch` call to handle errors from the server
+- [ ] (Optional) Chain a `catch()` function toimage.png your `fetch` call to handle errors from the server
 
 ### Final Step:
 
