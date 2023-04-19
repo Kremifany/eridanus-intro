@@ -1,8 +1,15 @@
-body{
+/* body{
     background-color:bisque;
-    color: hotpink;
+    color: rgb(19, 19, 20);
     font-family:Arial, Helvetica, sans-serif;
-}
+} */
+body {
+    background-color: lightgrey;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 10px;
+  }
 html {
     width: 100 vw;
 }
@@ -24,7 +31,17 @@ h2{
     text-decoration: underline;
     color: blue;
 }
+.img_div {
+    display: flex;
+    align-items:left; 
+}
 
+.image {
+    margin-left: 0px;
+    margin-right: 50px;
+    height: 300px;
+    width: 300px;
+}
 .expirience li{
     border: 5px solid black;
     border-radius: 10px;
@@ -36,38 +53,25 @@ h2{
     list-style-type: disc;
 }
 
-#skill li:hoover{
-    background-color: black;
-    color:white;
-}
+
 
 label{
-    background-color: antiquewhite;
     color: black;    
 }
 
-input{
-    font-size:1rem;
-    padding:15px;
-    border: 3px solid black; 
-}
-
-input:focus{
+.button {
+    background-color: #1565c0;
+    color: white;
+    width: 13.3rem;
+    font-size: 1rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
     border: none;
-}
-
-.button{
-    color:blueviolet;
-    background-color: burlywood;
-    margin-top: 11px;
-    padding: 25px;
-    font-size: 2rem;
-}
-
-
+  }
+  
 .button:hover{
-    background-color: red;
-    color:yellow;
+    background-color: rgb(0, 0, 255);
+    color:rgb(22, 22, 4);
 }
 footer{
     background-color: grey;
@@ -90,7 +94,7 @@ a:hover{
     color:black;
 }
 a:visited{
-    color:purple;
+    color:rgb(26, 0, 128);
 }
 .nav-item{
     display:inline;
@@ -110,11 +114,7 @@ a:visited{
 #skills{
     max-width:75%;
 }
-/* #skills ul{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-around;
-} */
+
 #skills ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -136,16 +136,69 @@ a:visited{
     background-color: black;
     color:white;
 }
+form {
+    margin-left: 10px;
+   }
+   .form-grid-container {
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-gap:0px;
+   }
+   
+   
+   input,
+   textarea {
+     width: 13rem;
+     height: 1.5rem;
+     border-radius: 0.25rem;
+     border: 0.05rem dashed black;
+     margin-bottom: 0.5rem;
+    font-size:1rem;
+    padding:15px;
+    border: 3px solid black; 
+}
 
-#messages ul{
+/*messages*/
+
+  #messages h2 {
+    color:  #1565c0;
+  } 
+
+  #form input, textarea {
+    font-size: 0.9em;
+    padding: 0m;
+    border: groove;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#messages li {
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 0.25em 0.75em;
+    margin-bottom: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items:self-start;
 }
-#messages li{
-    display: inline;
-    margin: 20px 10px;
-}
+ 
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    background-color:lightgrey;
+    
+  }
+  .hide {
+    display: none;
+  }
+  
+   
+
+   
 
 @media screen and (max-width: 900px) {
     p{

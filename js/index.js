@@ -65,9 +65,9 @@ messageForm.addEventListener('submit', e => {
 
 });
 
-//method for getting the info from github repos of mine//
+//using Ajax//
 
-var githubRequest = new XMLHttpRequest();
+/* var githubRequest = new XMLHttpRequest();
 githubRequest.open("GET","https://api.github.com/users/Kremifany/repos");
 githubRequest.send();
 githubRequest.onload = function(){
@@ -89,5 +89,66 @@ githubRequest.onload = function(){
         project.style.listStyleType = "none";
         project.style.borderBottom = "2px solid pink";
         project.style.margin = "1 rem 0";
-    }
-}
+    } 
+}*/
+
+
+//utility function for getting date from github data
+const dateFixer = (date) => {
+    return date.slice(0, 10);
+};
+
+fetch("shttps://api.github.com/users/Kremifny/repos")
+ .then((response) => {
+    if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Something went wrong');//in case the repo is not there
+ })
+ .then((repositories) => {
+    //selecting ul in projects section
+   let projectSection = document.getElementById('projects');
+   const projectList = projectSection.querySelector("ul"); 
+   //iterating over repositories array to display repo data
+   for (let i=0; i < repositories.length; i++) {
+    console.log(repositories);
+    const project = document.createElement("li");
+
+    const projectLink = document.createElement("a"); 
+    projectLink.innerText = repositories[i].name;
+    projectLink.href = repositories[i].html_url;
+    projectLink.target = "_blank";
+
+    const projectDescription = document.createElement("p");
+    projectDescription.innerText = repositories[i].description;
+    
+    const projectDate = document.createElement("p");
+    projectDate.innerText = `last update on ${dateFixer(repositories[i].pushed_at)}`;
+
+    const projectLanguage = document.createElement("p");
+    projectLanguage.innerText = repositories[i].language;
+
+    project.appendChild(projectLink);
+    project.appendChild(projectDescription);
+    project.appendChild(projectDate);
+    project.appendChild(projectLanguage);
+
+    projectList.appendChild(project);
+
+    project.style.listStyleType = "none";
+    project.style.borderBottom = "1px solid black";
+    project.style.margin = "1 rem 0";
+   }
+ })
+
+ .catch((error) => {
+    const projectSection = document.getElementById('projects');
+    const errorMessage = document.createElement("h1");
+    errorMessage.innerText = `There was an error! Github error message: ${error.message}`;
+    projectSection.appendChild(errorMessage);
+});
+
+
+ 
+ 
+
