@@ -98,7 +98,7 @@ const dateFixer = (date) => {
     return date.slice(0, 10);
 };
 
-fetch("shttps://api.github.com/users/Kremifny/repos")
+fetch("https://api.github.com/users/Kremifany/repos")
  .then((response) => {
     if (response.ok) {
         return response.json();
