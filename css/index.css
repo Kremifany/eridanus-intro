@@ -1,11 +1,6 @@
-/* body{
-    background-color:bisque;
-    color: rgb(19, 19, 20);
-    font-family:Arial, Helvetica, sans-serif;
-} */
 body {
     background-color: lightgrey;
-    color: black;
+    color: rgb(37, 32, 32);
     font-family:Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 10px;
@@ -19,17 +14,18 @@ section{
 }
 
 h1{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:fantasy;
     font-size: 4rem;
-    font-weight: bold;
-    color: blue;
+    font-weight:lighter;
+    color: rgb(255, 0, 111);
 }
 h2{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 3rem;
     font-weight: bold;
-    text-decoration: underline;
-    color: blue;
+    text-decoration:wavy;
+    color: rgb(255, 0, 81);
+    margin-block: 3rem;
 }
 .img_div {
     display: flex;
@@ -62,9 +58,9 @@ label{
 .button {
     background-color: #1565c0;
     color: white;
-    width: 13.3rem;
+    width: 15.2rem;
     font-size: 1rem;
-    height: 1.5rem;
+    height: 3rem;
     border-radius: 0.25rem;
     border: none;
   }
@@ -165,23 +161,26 @@ form {
   } 
 
   #form input, textarea {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding: 0m;
     border: groove;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
+
 #messages li {
     border: 2px solid grey;
     border-radius: 10px;
-    padding: 0.25em 0.75em;
+    padding: 0.25rem 0.75rem;
     margin-bottom: 0.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items:self-start;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
 }
- 
 
 
 footer {
@@ -200,27 +199,28 @@ footer {
 
    
 
-@media screen and (max-width: 900px) {
-    p{
-        font-size: 3rem;
-    }
-    img{
-        border-radius: 0px;
-    }
-    h1{
-        color:yellow;
-    }
 
-} 
-@media screen and (max-width: 450px) {
-    p{
+@media all and (max-width: 500px) {
+    h1 {
+        font-family: fantasy;
         font-size: 3rem;
+        font-weight: bold;
+        margin-top: 3rem;
+        margin-left: 4rem;
     }
-    img{
-        border-radius: 0px;
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        font-weight: bold;
+        text-decoration: wavy;
     }
-    h1{
-        color:fuchsia;
+    img {
+        align-self: center;
+    }
+    #skills li {
+        padding: 5px;
+    }
+    label {
+        color: rgb(162, 19, 19);
     }
 }
-

@@ -65,35 +65,7 @@ messageForm.addEventListener('submit', e => {
 
 });
 
-//using Ajax//
-
-/* var githubRequest = new XMLHttpRequest();
-githubRequest.open("GET","https://api.github.com/users/Kremifany/repos");
-githubRequest.send();
-githubRequest.onload = function(){
-    var repositories = JSON.parse(this.response);
-    console.log(repositories);  
-    const projectSection = document.getElementById("projects");
-    const projectList = projectSection.querySelector("ul"); 
-    for(i=0; i<repositories.length;i++){
-        const project = document.createElement("li");
-        const projectLink = document.createElement("a");        
-        projectLink.innerText = repositories[i].name;
-        projectLink.href = repositories[i].html_url;
-        projectLink.target = "_blank";
-
-
-        projectList.appendChild(projectLink);
-        projectList.appendChild(project);
-
-        project.style.listStyleType = "none";
-        project.style.borderBottom = "2px solid pink";
-        project.style.margin = "1 rem 0";
-    } 
-}*/
-
-
-//utility function for getting date from github data
+//utility function for getting data from github data
 const dateFixer = (date) => {
     return date.slice(0, 10);
 };
